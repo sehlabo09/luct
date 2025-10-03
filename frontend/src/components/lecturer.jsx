@@ -22,7 +22,7 @@ function LectureReportForm() {
   useEffect(() => {
     if (className && courseCode) {
       axios
-        .get(`http://localhost:5000/api/classes/${className}/${courseCode}`)
+        .get(`https://luct-unfz.onrender.com/api/classes/${className}/${courseCode}`)
         .then((res) => setTotalStudents(res.data.totalStudents))
         .catch(() => setTotalStudents(""));
     }
@@ -31,7 +31,7 @@ function LectureReportForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/lectures", {
+      await axios.post("https://luct-unfz.onrender.com/api/lectures", {
         faculty,
         className,
         week,
